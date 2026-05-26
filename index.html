@@ -1,0 +1,796 @@
+<!DOCTYPE html>
+<html lang="pt-br">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+    <!-- ══ SEO PRIMARY ══ -->
+    <title>Ingrid Farias | INDI.dev — Desenvolvedora Web & IA em Fortaleza</title>
+    <meta name="description"
+        content="Ingrid Farias, desenvolvedora web front-end e especialista em IA de Fortaleza. Sites, landing pages e dashboards com IA integrada. Entrega rápida, responsivo e SEO otimizado. Fale em menos de 1 hora.">
+    <meta name="keywords"
+        content="desenvolvedora web fortaleza, criação de sites fortaleza, landing page, site profissional, desenvolvimento web ceará, inteligência artificial, react, nextjs, freelancer web design, INDI.dev, Ingrid Farias">
+    <meta name="author" content="Ingrid Farias — INDI.dev">
+    <meta name="robots" content="index, follow">
+    <link rel="canonical" href="https://indi.dev/">
+
+    <!-- ══ OPEN GRAPH (Facebook/WhatsApp) ══ -->
+    <meta property="og:type" content="website">
+    <meta property="og:url" content="https://indi.dev/">
+    <meta property="og:title" content="Ingrid Farias | INDI.dev — Desenvolvedora Web & IA em Fortaleza">
+    <meta property="og:description"
+        content="Sites profissionais, landing pages e soluções com IA. Design exclusivo, entrega rápida e SEO otimizado. Resposta em menos de 1 hora.">
+    <meta property="og:image" content="https://indi.dev/img/og-cover.jpg">
+    <meta property="og:locale" content="pt_BR">
+    <meta property="og:site_name" content="INDI.dev">
+
+    <!-- ══ TWITTER CARD ══ -->
+    <meta name="twitter:card" content="summary_large_image">
+    <meta name="twitter:url" content="https://indi.dev/">
+    <meta name="twitter:title" content="Ingrid Farias | INDI.dev — Desenvolvedora Web & IA">
+    <meta name="twitter:description"
+        content="Sites profissionais, landing pages e soluções com IA. Design exclusivo, entrega rápida e SEO otimizado.">
+    <meta name="twitter:image" content="https://indi.dev/img/og-cover.jpg">
+
+    <!-- ══ STRUCTURED DATA (JSON-LD) ══ -->
+    <script type="application/ld+json">
+    {
+      "@context": "https://schema.org",
+      "@type": "Person",
+      "name": "Ingrid Farias",
+      "url": "https://indi.dev/",
+      "image": "https://indi.dev/img/indi.jpeg",
+      "sameAs": [
+        "https://www.instagram.com/indi.frx/",
+        "https://github.com/ingridalvesfarias",
+        "https://www.linkedin.com/in/ingridalvesfarias/"
+      ],
+      "jobTitle": "Desenvolvedora Web & Especialista em IA",
+      "worksFor": {
+        "@type": "Organization",
+        "name": "INDI.dev"
+      },
+      "address": {
+        "@type": "PostalAddress",
+        "addressLocality": "Fortaleza",
+        "addressRegion": "CE",
+        "addressCountry": "BR"
+      },
+      "email": "ingridkookfarias@gmail.com",
+      "telephone": "+5585992981132",
+      "description": "Desenvolvedora web front-end e especialista em IA de Fortaleza. Criação de sites, landing pages e dashboards inteligentes com entrega rápida e SEO otimizado.",
+      "knowsAbout": ["HTML5", "CSS3", "JavaScript", "React", "Node.js", "TypeScript", "Next.js", "Tailwind CSS", "Inteligência Artificial", "SEO", "UI/UX Design"]
+    }
+    </script>
+
+    <link
+        href="https://fonts.googleapis.com/css2?family=Syne:wght@400;600;700;800&family=DM+Mono:wght@300;400;500&display=swap"
+        rel="stylesheet">
+    <link rel="stylesheet" href="styles.css">
+</head>
+
+<body>
+
+    <!-- CUSTOM CURSOR -->
+    <div class="cursor" id="cursor"></div>
+    <div class="cursor-trail" id="cursorTrail"></div>
+
+    <!-- LOADING SCREEN -->
+    <div class="loader" id="loader">
+        <div class="loader-inner">
+            <div class="loader-logo">INDI<span>.</span>dev</div>
+            <div class="loader-bar-wrap">
+                <div class="loader-bar" id="loaderBar"></div>
+            </div>
+            <div class="loader-text" id="loaderText">Inicializando sistema...</div>
+        </div>
+    </div>
+
+    <!-- SCANLINE -->
+    <div class="scanline"></div>
+
+    <!-- FLOATING BUTTONS -->
+    <div class="side-btn btn-ai" id="openChat" title="Falar com PARKER (IA)">
+        <img src="./img/assistente-parker.png" alt="Parker IA" class="parker-avatar">
+    </div>
+
+    <a href="https://wa.me/5585992981132" class="side-btn btn-wpp" target="_blank" title="WhatsApp">
+        <img src="./img/whatsapp.png" alt="WhatsApp">
+    </a>
+
+    <!-- HEADER -->
+    <header id="mainHeader">
+        <div class="logo">INDI<span>.</span>dev</div>
+        <nav>
+            <ul>
+                <li><a href="#home">Home</a></li>
+                <li><a href="#sobre">Sobre</a></li>
+                <li><a href="#vitrine">Vitrine</a></li>
+                <li><a href="#tecnologias">Tecnologias</a></li>
+                <li><a href="#projetos">Projetos</a></li>
+                <li><a href="#depoimentos">Depoimentos</a></li>
+                <li><a href="#contato">Contato</a></li>
+                <li><a href="#faq">FAQ</a></li>
+            </ul>
+        </nav>
+        <a href="#contato" class="nav-cta">Iniciar Projeto</a>
+    </header>
+
+    <!-- HERO -->
+    <section class="hero" id="home">
+        <div class="hero-left">
+            <p class="hero-tagline">Vamos construir algo incrível juntos!</p>
+            <p class="hero-sub">Entre em contato, respondo em menos de 1 hora.</p>
+            <div class="hero-socials">
+                <a href="https://www.instagram.com/indi.frx/" target="_blank" class="social-link" title="Instagram">
+                    <svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+                        <rect x="2" y="2" width="20" height="20" rx="5" />
+                        <path d="M16 11.37A4 4 0 1 1 12.63 8 4 4 0 0 1 16 11.37z" />
+                        <line x1="17.5" y1="6.5" x2="17.51" y2="6.5" />
+                    </svg>
+                    Instagram
+                </a>
+                <a href="https://wa.me/5585992981132" target="_blank" class="social-link wpp" title="WhatsApp">
+                    <svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+                        <path
+                            d="M21 11.5a8.38 8.38 0 0 1-.9 3.8 8.5 8.5 0 0 1-7.6 4.7 8.38 8.38 0 0 1-3.8-.9L3 21l1.9-5.7a8.38 8.38 0 0 1-.9-3.8 8.5 8.5 0 0 1 4.7-7.6 8.38 8.38 0 0 1 3.8-.9h.5a8.48 8.48 0 0 1 8 8v.5z" />
+                    </svg>
+                    WhatsApp
+                </a>
+                <a href="mailto:ingridkookfarias@gmail.com" class="social-link email" title="E-mail">
+                    <svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+                        <path d="M4 4h16c1.1 0 2 .9 2 2v12c0 1.1-.9 2-2 2H4c-1.1 0-2-.9-2-2V6c0-1.1.9-2 2-2z" />
+                        <polyline points="22,6 12,13 2,6" />
+                    </svg>
+                    E-mail
+                </a>
+            </div>
+        </div>
+
+        <div class="hero-right">
+            <div class="hero-name-wrap">
+                <h1 class="hero-name">INGRID<br><span>FARIAS</span></h1>
+                <p class="hero-role">Desenvolvedora Web & Especialista em IA</p>
+                <div class="hero-status">
+                    <span class="status-dot"></span>
+                    Disponível para Projetos
+                </div>
+                <a href="#contato" class="hero-cta">Iniciar Aventura →</a>
+            </div>
+        </div>
+    </section>
+
+    <!-- SOBRE -->
+    <section class="panel-section" id="sobre">
+        <div class="bio-container">
+            <div class="bio-visual">
+                <div class="web-frame">
+                    <img src="./img/indi.jpeg" alt="Ingrid Farias" class="profile-photo">
+                </div>
+                <div class="skill-tags">
+                    <span>#FULL_STACK</span>
+                    <span>#FRONT_END</span>
+                    <span>#BACK_END</span>
+                    <span>#IA</span>
+                    <span>#HTML</span>
+                    <span>#CSS</span>
+                    <span>#JAVASCRIPT</span>
+                    <span>#REACT</span>
+                    <span>#NODE</span>
+                    <span>#TYPESCRIPT</span>
+                </div>
+            </div>
+            <div class="bio-content">
+                <div class="section-label">// SOBRE_MIM</div>
+                <h2>QUEM <span class="accent-green">SOU EU</span></h2>
+                <p class="manifesto">
+                    Sou Ingrid Farias, <span class="accent-green">desenvolvedora web e especialista em IA</span> de
+                    Fortaleza. Sou apaixonada por tecnologia e entrego o melhor do meu trabalho:
+                    <span class="accent-gold">cada projeto recebe minha atenção total</span> — com responsividade
+                    impecável, performance máxima e animações que impressionam.
+                </p>
+                <p class="manifesto">
+                    Não entrego apenas interfaces; crio ecossistemas digitais que resolvem problemas reais, desde
+                    dashboards inteligentes a armaduras digitais de segurança. <span class="accent-white">Minha marca é
+                        o minimalismo agressivo e a precisão técnica.</span> Eu não entrego sites.
+                    <span class="accent-green">Eu entrego máquinas de conversão.</span> Prazos são promessas. Sempre
+                    cumpro.
+                </p>
+                <div class="stats-row">
+                    <div class="stat-item">
+                        <span class="stat-num">15+</span>
+                        <span class="stat-label">Projetos</span>
+                    </div>
+                    <div class="stat-item">
+                        <span class="stat-num">100%</span>
+                        <span class="stat-label">Satisfação</span>
+                    </div>
+                    <div class="stat-item">
+                        <span class="stat-num">&lt;1h</span>
+                        <span class="stat-label">Resposta</span>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- VITRINE / SERVIÇOS -->
+    <section class="panel-section" id="vitrine">
+        <div class="section-header">
+            <div class="section-label">// ADQUIRIR_TECNOLOGIA</div>
+            <h1>PLANOS E <span class="accent-green">SERVIÇOS</span></h1>
+            <p class="section-sub">Escolha o plano ideal para o seu projeto. Todos com design exclusivo e entrega
+                garantida.</p>
+        </div>
+        <div class="pricing-grid pricing-grid-v2">
+
+            <!-- Card 1 — Landing Page Express -->
+            <div class="price-card tilt-card">
+                <div class="price-header">
+                    <span class="version">V.1 · LANDING PAGE EXPRESS</span>
+                    <div class="price-value">R$ 350<span>.00</span></div>
+                    <div class="price-delivery"><i class="fa-solid fa-bolt"></i> Entrega em 72h</div>
+                </div>
+                <ul class="price-features">
+                    <li><span class="check">✔</span> Foco total em conversão</li>
+                    <li><span class="check">✔</span> WhatsApp + formulário integrado</li>
+                    <li><span class="check">✔</span> 100% responsivo e otimizado</li>
+                    <li><span class="check">✔</span> Design profissional exclusivo</li>
+                    <li><span class="check">✔</span> Entrega em até 72 horas</li>
+                </ul>
+                <div class="price-footer">
+                    <a href="#contato" class="buy-btn">INICIAR_PROTOCOLO</a>
+                </div>
+            </div>
+
+            <!-- Card 2 — Landing Page Premium -->
+            <div class="price-card tilt-card">
+                <div class="price-header">
+                    <span class="version">V.2 · LANDING PAGE PREMIUM</span>
+                    <div class="price-value">R$ 500<span>.00</span></div>
+                    <div class="price-delivery"><i class="fa-solid fa-calendar-check"></i> Entrega em 7 dias</div>
+                </div>
+                <ul class="price-features">
+                    <li><span class="check">✔</span> Página única premium</li>
+                    <li><span class="check">✔</span> Design responsivo exclusivo</li>
+                    <li><span class="check">✔</span> SEO otimizado</li>
+                    <li><span class="check">✔</span> Formulário integrado</li>
+                    <li><span class="check">✔</span> Entrega em até 7 dias</li>
+                </ul>
+                <div class="price-footer">
+                    <a href="#contato" class="buy-btn">INICIAR_PROTOCOLO</a>
+                </div>
+            </div>
+
+            <!-- Card 3 — Site Institucional -->
+            <div class="price-card tilt-card">
+                <div class="price-header">
+                    <span class="version">V.3 · SITE INSTITUCIONAL</span>
+                    <div class="price-value">R$ 1.400<span>.00</span></div>
+                    <div class="price-delivery"><i class="fa-solid fa-calendar-check"></i> Entrega em 14 dias</div>
+                </div>
+                <ul class="price-features">
+                    <li><span class="check">✔</span> Até 5 páginas completas</li>
+                    <li><span class="check">✔</span> Design exclusivo + SEO técnico</li>
+                    <li><span class="check">✔</span> WhatsApp + formulários</li>
+                    <li><span class="check">✔</span> Google Analytics integrado</li>
+                    <li><span class="check">✔</span> Entrega em até 14 dias</li>
+                </ul>
+                <div class="price-footer">
+                    <a href="#contato" class="buy-btn">INICIAR_PROTOCOLO</a>
+                </div>
+            </div>
+
+            <!-- Card 4 — Site Premium (POPULAR) -->
+            <div class="price-card featured tilt-card">
+                <div class="featured-badge">MAIS_POPULAR</div>
+                <div class="price-header">
+                    <span class="version">V.4 · SITE PREMIUM</span>
+                    <div class="price-value">R$ 2.200<span>.00</span></div>
+                    <div class="price-delivery"><i class="fa-solid fa-shield-halved"></i> 2 meses de suporte</div>
+                </div>
+                <ul class="price-features">
+                    <li><span class="check">✔</span> Até 8 páginas + blog</li>
+                    <li><span class="check">✔</span> Animações avançadas</li>
+                    <li><span class="check">✔</span> Performance 100 (Lighthouse)</li>
+                    <li><span class="check">✔</span> SEO técnico completo</li>
+                    <li><span class="check">✔</span> 2 meses de suporte incluído</li>
+                </ul>
+                <div class="price-footer">
+                    <a href="#contato" class="buy-btn">INICIAR_PROTOCOLO</a>
+                </div>
+            </div>
+
+            <!-- Card 5 — E-commerce -->
+            <div class="price-card tilt-card">
+                <div class="price-header">
+                    <span class="version">V.5 · E-COMMERCE</span>
+                    <div class="price-value">R$ 2.800<span>.00</span></div>
+                    <div class="price-delivery"><i class="fa-solid fa-bag-shopping"></i> Entrega em 30 dias</div>
+                </div>
+                <ul class="price-features">
+                    <li><span class="check">✔</span> Loja online completa</li>
+                    <li><span class="check">✔</span> PIX, cartão e boleto</li>
+                    <li><span class="check">✔</span> Painel de gestão de produtos</li>
+                    <li><span class="check">✔</span> Integração com marketplaces</li>
+                    <li><span class="check">✔</span> Entrega em até 30 dias</li>
+                </ul>
+                <div class="price-footer">
+                    <a href="#contato" class="buy-btn">INICIAR_PROTOCOLO</a>
+                </div>
+            </div>
+
+            <!-- Card 6 — Combo Site + IA -->
+            <div class="price-card price-card-ai tilt-card">
+                <div class="ai-badge">✦ IA INTEGRADA</div>
+                <div class="price-header">
+                    <span class="version">V.6 · COMBO SITE + IA</span>
+                    <div class="price-value price-value-ai">
+                        R$ 1.750<span class="price-setup">/setup</span>
+                        <div class="price-monthly">+ R$ 250<span>/mês</span> <em class="discount-tag">20% off</em></div>
+                    </div>
+                    <div class="price-delivery"><i class="fa-solid fa-robot"></i> Assistente IA incluso</div>
+                </div>
+                <ul class="price-features">
+                    <li><span class="check check-purple">✔</span> Site institucional completo</li>
+                    <li><span class="check check-purple">✔</span> Assistente IA personalizado</li>
+                    <li><span class="check check-purple">✔</span> Automação de follow-up</li>
+                    <li><span class="check check-purple">✔</span> Integração WhatsApp + e-mail</li>
+                    <li><span class="check check-purple">✔</span> Suporte contínuo mensal</li>
+                </ul>
+                <div class="price-footer">
+                    <a href="#contato" class="buy-btn buy-btn-ai">ATIVAR_IA →</a>
+                </div>
+            </div>
+
+        </div>
+    </section>
+
+    <!-- TECNOLOGIAS -->
+    <section class="panel-section" id="tecnologias">
+        <div class="section-header">
+            <div class="section-label">// ARSENAL_TÉCNICO</div>
+            <h1>TECNOLOGIAS QUE <span class="accent-purple">DOMINO</span></h1>
+        </div>
+        <div class="tech-grid">
+
+            <div class="tech-column">
+                <div class="tech-col-header">Programação</div>
+                <div class="tech-items">
+                    <div class="tech-item"><span>HTML5</span></div>
+                    <div class="tech-item"><span>CSS3</span></div>
+                    <div class="tech-item"><span>JavaScript</span></div>
+                    <div class="tech-item"><span>React</span></div>
+                    <div class="tech-item"><span>TypeScript</span></div>
+                    <div class="tech-item"><span>Node.js</span></div>
+                    <div class="tech-item"><span>Next.js</span></div>
+                    <div class="tech-item"><span>Vite</span></div>
+                    <div class="tech-item"><span>Tailwind CSS</span></div>
+                </div>
+            </div>
+
+            <div class="tech-column tech-column-ai">
+                <div class="tech-col-header">IA &amp; Automação</div>
+                <div class="tech-items">
+                    <div class="tech-item"><span>Groq AI</span></div>
+                    <div class="tech-item"><span>OpenAI</span></div>
+                    <div class="tech-item"><span>Gemini AI</span></div>
+                    <div class="tech-item"><span>Claude AI</span></div>
+                </div>
+            </div>
+
+            <div class="tech-column">
+                <div class="tech-col-header">Infra &amp; Ferramentas</div>
+                <div class="tech-items">
+                    <div class="tech-item"><span>Vercel</span></div>
+                    <div class="tech-item"><span>Git / GitHub</span></div>
+                    <div class="tech-item"><span>Figma</span></div>
+                    <div class="tech-item"><span>Canva</span></div>
+                    <div class="tech-item"><span>Gimp</span></div>
+                    <div class="tech-item"><span>Netlify</span></div>
+                    <div class="tech-item"><span>Hostinger</span></div>
+                </div>
+            </div>
+
+        </div>
+    </section>
+
+    <!-- PROJETOS -->
+    <section class="panel-section" id="projetos">
+        <div class="section-header">
+            <div class="section-label">// REGISTRO_DE_OPERAÇÕES</div>
+            <h1>SISTEMAS <span class="accent-purple">ATIVOS</span></h1>
+        </div>
+        <div class="projects-grid">
+            <article class="project-card tilt-card">
+                <div class="card-top">
+                    <span class="op-id">OP_001</span>
+                    <span class="status-blink">LIVE</span>
+                </div>
+                <div class="card-inner">
+                    <h3 class="project-title">CYPHER-AEGIS</h3>
+                    <p class="project-description">Landing page de alta conversão com foco em segurança. Proteção neural
+                        contra fraude de bots em tráfego pago.</p>
+                    <div class="tech-stack">
+                        <span>JS_CORE</span><span>UI_SECURITY</span><span>NODE_V18</span>
+                    </div>
+                    <div class="project-stats">
+                        <div class="stat-chip"><span>LOAD:</span> 0.4s</div>
+                        <div class="stat-chip"><span>AUTH:</span> MAX</div>
+                    </div>
+                </div>
+                <div class="card-actions">
+                    <a href="#" class="view-btn">VER_CÓDIGO →</a>
+                </div>
+            </article>
+            <article class="project-card tilt-card">
+                <div class="card-top">
+                    <span class="op-id">OP_002</span>
+                    <span class="status-blink">LIVE</span>
+                </div>
+                <div class="card-inner">
+                    <h3 class="project-title">GYM_AI</h3>
+                    <p class="project-description">Integração de inteligência artificial (Groq API) para geração de
+                        protocolos de treino e nutrição personalizados.</p>
+                    <div class="tech-stack">
+                        <span>AI_INTEGRATION</span><span>GROQ_LLM</span><span>REACTIVE_UI</span>
+                    </div>
+                    <div class="project-stats">
+                        <div class="stat-chip"><span>API:</span> SYNC</div>
+                        <div class="stat-chip"><span>LATENCY:</span> LOW</div>
+                    </div>
+                </div>
+                <div class="card-actions">
+                    <a href="#" class="view-btn">VER_CÓDIGO →</a>
+                </div>
+            </article>
+            <article class="project-card tilt-card">
+                <div class="card-top">
+                    <span class="op-id">OP_003</span>
+                    <span class="status-blink">LIVE</span>
+                </div>
+                <div class="card-inner">
+                    <h3 class="project-title">RESUME_BUILDER</h3>
+                    <p class="project-description">Gerador de currículos profissionais com exportação PDF e feedback de
+                        IA para otimização de sistemas ATS.</p>
+                    <div class="tech-stack">
+                        <span>DOM_MANIPULATION</span><span>PDF_ENGINE</span><span>UX_LOGIC</span>
+                    </div>
+                    <div class="project-stats">
+                        <div class="stat-chip"><span>ATS:</span> READY</div>
+                        <div class="stat-chip"><span>EXPORT:</span> PDF</div>
+                    </div>
+                </div>
+                <div class="card-actions">
+                    <a href="#" class="view-btn">VER_CÓDIGO →</a>
+                </div>
+            </article>
+        </div>
+    </section>
+
+    <!-- DEPOIMENTOS -->
+    <section class="panel-section" id="depoimentos">
+        <div class="section-header">
+            <div class="section-label">// FEEDBACK_DO_SISTEMA</div>
+            <h1>O QUE <span class="accent-gold">DIZEM</span></h1>
+        </div>
+        <div class="marquee-wrapper" id="marqueeWrapper">
+            <div class="marquee-track" id="marqueeTrack">
+                <!-- Row 1 -->
+                <div class="testimonial-card">
+                    <div class="stars">★★★★★</div>
+                    <p>"A Ingrid entregou muito além do esperado. O site ficou com uma identidade visual única e o
+                        resultado em conversões foi imediato. Profissional excepcional!"</p>
+                    <div class="testimonial-author">
+                        <div class="author-avatar">MR</div>
+                        <div><strong>Marcos Ribeiro</strong><span>CEO, TechStart BR</span></div>
+                    </div>
+                </div>
+                <div class="testimonial-card">
+                    <div class="stars">★★★★★</div>
+                    <p>"Precisava de um dashboard com IA integrada e achei que seria complicado. A Ingrid fez parecer
+                        simples, entregou antes do prazo e explicou cada etapa. Recomendo muito!"</p>
+                    <div class="testimonial-author">
+                        <div class="author-avatar">AL</div>
+                        <div><strong>Ana Lima</strong><span>Fundadora, FitLife App</span></div>
+                    </div>
+                </div>
+                <div class="testimonial-card">
+                    <div class="stars">★★★★★</div>
+                    <p>"Trabalhar com a Ingrid foi uma das melhores decisões que tomei para o meu negócio. Ela entende
+                        não só de código, mas de estratégia digital de verdade."</p>
+                    <div class="testimonial-author">
+                        <div class="author-avatar">PC</div>
+                        <div><strong>Pedro Costa</strong><span>Designer, Studio Neon</span></div>
+                    </div>
+                </div>
+                <div class="testimonial-card">
+                    <div class="stars">★★★★★</div>
+                    <p>"Resultado incrível! Site entregue em tempo recorde com animações que deixaram meu cliente de
+                        queixo caído. A Ingrid é uma referência no que faz."</p>
+                    <div class="testimonial-author">
+                        <div class="author-avatar">JS</div>
+                        <div><strong>Julia Souza</strong><span>Marketing, GrowthLab</span></div>
+                    </div>
+                </div>
+                <div class="testimonial-card">
+                    <div class="stars">★★★★★</div>
+                    <p>"Minha landing page triplicou a taxa de conversão após a reformulação. O olhar técnico aliado ao
+                        design da Ingrid é algo difícil de encontrar no mercado."</p>
+                    <div class="testimonial-author">
+                        <div class="author-avatar">RM</div>
+                        <div><strong>Rafael Matos</strong><span>Empreendedor Digital</span></div>
+                    </div>
+                </div>
+                <div class="testimonial-card">
+                    <div class="stars">★★★★★</div>
+                    <p>"Além de entregar o projeto com excelência, ela sugeriu melhorias que eu nem havia pensado. É
+                        esse diferencial que faz toda a diferença!"</p>
+                    <div class="testimonial-author">
+                        <div class="author-avatar">CC</div>
+                        <div><strong>Carla Carvalho</strong><span>Diretora, Nova Era Soluções</span></div>
+                    </div>
+                </div>
+                <!-- Duplicated for infinite loop -->
+                <div class="testimonial-card" aria-hidden="true">
+                    <div class="stars">★★★★★</div>
+                    <p>"A Ingrid entregou muito além do esperado. O site ficou com uma identidade visual única e o
+                        resultado em conversões foi imediato. Profissional excepcional!"</p>
+                    <div class="testimonial-author">
+                        <div class="author-avatar">MR</div>
+                        <div><strong>Marcos Ribeiro</strong><span>CEO, TechStart BR</span></div>
+                    </div>
+                </div>
+                <div class="testimonial-card" aria-hidden="true">
+                    <div class="stars">★★★★★</div>
+                    <p>"Precisava de um dashboard com IA integrada e achei que seria complicado. A Ingrid fez parecer
+                        simples, entregou antes do prazo e explicou cada etapa. Recomendo muito!"</p>
+                    <div class="testimonial-author">
+                        <div class="author-avatar">AL</div>
+                        <div><strong>Ana Lima</strong><span>Fundadora, FitLife App</span></div>
+                    </div>
+                </div>
+                <div class="testimonial-card" aria-hidden="true">
+                    <div class="stars">★★★★★</div>
+                    <p>"Trabalhar com a Ingrid foi uma das melhores decisões que tomei para o meu negócio. Ela entende
+                        não só de código, mas de estratégia digital de verdade."</p>
+                    <div class="testimonial-author">
+                        <div class="author-avatar">PC</div>
+                        <div><strong>Pedro Costa</strong><span>Designer, Studio Neon</span></div>
+                    </div>
+                </div>
+                <div class="testimonial-card" aria-hidden="true">
+                    <div class="stars">★★★★★</div>
+                    <p>"Resultado incrível! Site entregue em tempo recorde com animações que deixaram meu cliente de
+                        queixo caído. A Ingrid é uma referência no que faz."</p>
+                    <div class="testimonial-author">
+                        <div class="author-avatar">JS</div>
+                        <div><strong>Julia Souza</strong><span>Marketing, GrowthLab</span></div>
+                    </div>
+                </div>
+                <div class="testimonial-card" aria-hidden="true">
+                    <div class="stars">★★★★★</div>
+                    <p>"Minha landing page triplicou a taxa de conversão após a reformulação. O olhar técnico aliado ao
+                        design da Ingrid é algo difícil de encontrar no mercado."</p>
+                    <div class="testimonial-author">
+                        <div class="author-avatar">RM</div>
+                        <div><strong>Rafael Matos</strong><span>Empreendedor Digital</span></div>
+                    </div>
+                </div>
+                <div class="testimonial-card" aria-hidden="true">
+                    <div class="stars">★★★★★</div>
+                    <p>"Além de entregar o projeto com excelência, ela sugeriu melhorias que eu nem havia pensado. É
+                        esse diferencial que faz toda a diferença!"</p>
+                    <div class="testimonial-author">
+                        <div class="author-avatar">CC</div>
+                        <div><strong>Carla Carvalho</strong><span>Diretora, Nova Era Soluções</span></div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- PRE-FOOTER CTA -->
+    <section class="pre-footer-cta">
+        <div class="cta-content">
+            <p class="cta-label">// MISSÃO_ACEITA?</p>
+            <h2 class="cta-title">PRONTOS PARA<br><span>ESSA AVENTURA?</span></h2>
+            <p class="cta-sub">Fale comigo hoje, responderei em até 1 hora.</p>
+            <div class="cta-buttons">
+                <a href="https://wa.me/5585992981132" target="_blank" class="cta-btn wpp-btn">
+                    <img src="./img/whatsapp.png" alt="WA" style="width:22px;height:22px;border-radius:50%;"> Chamar no
+                    WhatsApp
+                </a>
+                <a href="mailto:ingridkookfarias@gmail.com" class="cta-btn email-btn">
+                    <svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+                        <path d="M4 4h16c1.1 0 2 .9 2 2v12c0 1.1-.9 2-2 2H4c-1.1 0-2-.9-2-2V6c0-1.1.9-2 2-2z" />
+                        <polyline points="22,6 12,13 2,6" />
+                    </svg>
+                    Enviar E-mail
+                </a>
+            </div>
+        </div>
+    </section>
+
+    <!-- CONTATO -->
+    <section class="panel-section contact-section" id="contato">
+        <div class="contact-container">
+            <div class="contact-info">
+                <div class="section-label">// CANAL_DE_COMUNICAÇÃO</div>
+                <h1>INICIAR <span class="accent-green">CONTATO</span></h1>
+                <p>Pronta para elevar o nível tecnológico do seu projeto? Envie os detalhes da missão e entrarei em
+                    contato via link neural (ou e-mail).</p>
+                <div class="contact-details">
+                    <a href="mailto:ingridkookfarias@gmail.com" class="detail-item detail-btn">
+                        <svg width="15" height="15" viewBox="0 0 24 24" fill="none" stroke="currentColor"
+                            stroke-width="2">
+                            <path d="M4 4h16c1.1 0 2 .9 2 2v12c0 1.1-.9 2-2 2H4c-1.1 0-2-.9-2-2V6c0-1.1.9-2 2-2z" />
+                            <polyline points="22,6 12,13 2,6" />
+                        </svg>
+                        <span>EMAIL:</span> ingridkookfarias@gmail.com
+                    </a>
+                    <a href="https://wa.me/5585992981132" target="_blank" class="detail-item detail-btn detail-btn-wpp">
+                        <svg width="15" height="15" viewBox="0 0 24 24" fill="none" stroke="currentColor"
+                            stroke-width="2">
+                            <path
+                                d="M21 11.5a8.38 8.38 0 0 1-.9 3.8 8.5 8.5 0 0 1-7.6 4.7 8.38 8.38 0 0 1-3.8-.9L3 21l1.9-5.7a8.38 8.38 0 0 1-.9-3.8 8.5 8.5 0 0 1 4.7-7.6 8.38 8.38 0 0 1 3.8-.9h.5a8.48 8.48 0 0 1 8 8v.5z" />
+                        </svg>
+                        <span>WHATSAPP:</span> +55 (85) 99298-1132
+                    </a>
+                    <div class="detail-item">
+                        <span>LOCAL:</span> FORTALEZA_CE // BR
+                    </div>
+                    <div class="detail-item">
+                        <span>RESPOSTA:</span> &lt; 1 hora
+                    </div>
+                </div>
+            </div>
+            <div class="contact-form-wrapper">
+                <form class="mission-form" id="missionForm">
+                    <div class="form-row">
+                        <div class="input-group">
+                            <label>NOME COMPLETO</label>
+                            <input type="text" placeholder="Seu nome completo" required>
+                        </div>
+                        <div class="input-group">
+                            <label>E-MAIL</label>
+                            <input type="email" placeholder="seu@email.com" required>
+                        </div>
+                    </div>
+                    <div class="input-group">
+                        <label>WHATSAPP</label>
+                        <input type="tel" placeholder="+55 (XX) XXXXX-XXXX">
+                    </div>
+                    <div class="input-group">
+                        <label>SERVIÇO DESEJADO</label>
+                        <select>
+                            <option>Landing Page Express — V1 (R$ 350)</option>
+                            <option>Landing Page Premium — V2 (R$ 500)</option>
+                            <option>Site Institucional — V3 (R$ 1.400)</option>
+                            <option>Site Premium — V4 (R$ 2.200)</option>
+                            <option>E-commerce — V5 (R$ 2.800)</option>
+                            <option>Combo Site + IA — V6 (R$ 1.750 + R$ 250/mês)</option>
+                            <option>Outros Protocolos</option>
+                        </select>
+                    </div>
+                    <div class="input-group">
+                        <label>MENSAGEM (OPCIONAL)</label>
+                        <textarea rows="4" placeholder="Descreva brevemente o projeto..."></textarea>
+                    </div>
+                    <button type="submit" class="submit-btn">ENVIAR RELATÓRIO →</button>
+                </form>
+            </div>
+        </div>
+    </section>
+
+    <!-- FAQ -->
+    <section class="panel-section" id="faq">
+        <div class="section-header">
+            <div class="section-label">// BASE_DE_CONHECIMENTO</div>
+            <h1>PERGUNTAS <span class="accent-purple">FREQUENTES</span></h1>
+        </div>
+        <div class="faq-list">
+            <div class="faq-item">
+                <button class="faq-question">Qual o prazo médio de entrega? <span>+</span></button>
+                <div class="faq-answer">Landing pages (V1) são entregues em até 7 dias úteis. Sites integrados (V2) em
+                    até 15 dias. Projetos avançados têm prazo definido na consultoria inicial.</div>
+            </div>
+            <div class="faq-item">
+                <button class="faq-question">Como funciona o pagamento? <span>+</span></button>
+                <div class="faq-answer">50% na aprovação do briefing e 50% na entrega final. Aceito PIX, transferência
+                    bancária e cartão de crédito (parcelado em até 3x sem juros).</div>
+            </div>
+            <div class="faq-item">
+                <button class="faq-question">Você entrega o código-fonte? <span>+</span></button>
+                <div class="faq-answer">Sim! Todo o código-fonte é entregue ao cliente ao final do projeto, sem custo
+                    adicional. O projeto é 100% seu.</div>
+            </div>
+            <div class="faq-item">
+                <button class="faq-question">Oferece suporte após a entrega? <span>+</span></button>
+                <div class="faq-answer">O plano V2 inclui 30 dias de suporte pós-entrega. Para os outros planos, ofereço
+                    pacotes de manutenção mensal. Entre em contato para mais detalhes.</div>
+            </div>
+            <div class="faq-item">
+                <button class="faq-question">Trabalha com projetos internacionais? <span>+</span></button>
+                <div class="faq-answer">Sim! Atendo clientes no Brasil e exterior. Comunicação em português e inglês.
+                    Pagamentos internacionais via Wise ou PayPal.</div>
+            </div>
+        </div>
+    </section>
+
+    <!-- FOOTER -->
+    <footer class="main-footer">
+        <div class="footer-top">
+            <div class="footer-brand">
+                <div class="logo">INDI<span>.</span>dev</div>
+                <p>Transformando ideias em<br>ecossistemas digitais.</p>
+                <a href="https://portfolio-ingrid-farias.vercel.app/" target="_blank" class="footer-portfolio-btn">Ver
+                    Portfólio →</a>
+            </div>
+            <div class="footer-nav">
+                <h4>Navegação</h4>
+                <a href="#home">Home</a>
+                <a href="#sobre">Sobre</a>
+                <a href="#vitrine">Vitrine</a>
+                <a href="#tecnologias">Tecnologias</a>
+                <a href="#projetos">Projetos</a>
+                <a href="#depoimentos">Depoimentos</a>
+                <a href="#contato">Contato</a>
+            </div>
+            <div class="footer-nav">
+                <h4>Redes Sociais</h4>
+                <a href="https://www.instagram.com/indi.frx/" target="_blank" class="social-link" title="Instagram">
+                    Instagram</a>
+                <a href="https://wa.me/5585992981132" target="_blank" class="social-link" title="WhatsApp">
+                    WhatsApp</a>
+                <a href="https://github.com/ingridalvesfarias" target="_blank" class="social-link" title="GitHub">
+                    GitHub</a>
+                <a href="https://www.linkedin.com/in/ingridalvesfarias/" target="_blank" class="social-link"
+                    title="LinkedIn">
+                    LinkedIn</a>
+            </div>
+            <div class="footer-nav">
+                <h4>Legal</h4>
+                <a href="#">Política de Privacidade</a>
+                <a href="#">Termos de Uso</a>
+            </div>
+        </div>
+        <div class="footer-line"></div>
+        <div class="footer-bottom">
+            <span>© 2026 Ingrid Farias — INDI.DEV. Todos os direitos reservados.</span>
+            <a href="#home" class="back-top">↑ BACK_TO_TOP</a>
+        </div>
+    </footer>
+
+    <!-- CHAT PARKER -->
+    <div class="ai-chat-window" id="aiChat">
+        <div class="chat-header">
+            <img src="./img/assistente-parker.png" alt="Parker" class="chat-avatar">
+            <div>
+                <span class="chat-name">PARKER</span>
+                <div class="chat-online"><span class="status-dot"></span> Online</div>
+            </div>
+            <button class="close-chat" id="closeChat">✕</button>
+        </div>
+        <div class="chat-messages" id="chatMessages">
+            <div class="msg system">>> PROTOCOLO_INICIALIZADO...</div>
+            <div class="msg parker">Olá! Sou o PARKER, assistente virtual da Ingrid Farias. Como posso ajudar na sua
+                missão
+                hoje?</div>
+        </div>
+        <div class="chat-input-area">
+            <input type="text" id="userInput" placeholder="Digite sua mensagem..." autocomplete="off">
+            <button id="sendMsg">
+                <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+                    <line x1="22" y1="2" x2="11" y2="13" />
+                    <polygon points="22 2 15 22 11 13 2 9 22 2" />
+                </svg>
+            </button>
+        </div>
+    </div>
+
+    <script src="script.js"></script>
+</body>
+
+</html>
