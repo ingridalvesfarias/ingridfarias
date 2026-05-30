@@ -180,7 +180,7 @@ function parkerResponse(userText) {
         let response;
 
         if (lower.includes('preço') || lower.includes('valor') || lower.includes('quanto')) {
-            response = 'Temos 3 planos: V1 Essencial (R$ 500 — landing page), V2 Integrado (R$ 1.200 — site multi-páginas) e V3 Avançado (sob consulta — dashboards com IA). Qual se encaixa melhor na sua missão?';
+            response = 'Temos 3 planos: V1 Essencial (R$ 550 — landing page), V2 Integrado (R$ 1.200 — site multi-páginas) e V3 Avançado (sob consulta — dashboards com IA). Qual se encaixa melhor na sua missão?';
         } else if (lower.includes('prazo') || lower.includes('tempo') || lower.includes('dias')) {
             response = 'V1 entregue em até 7 dias úteis, V2 em até 15 dias. Projetos V3 têm prazo definido na consultoria inicial. A Ingrid prioriza qualidade e agilidade!';
         } else if (lower.includes('whatsapp') || lower.includes('contato') || lower.includes('falar')) {
