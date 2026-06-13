@@ -219,6 +219,8 @@ form.addEventListener('submit', async (e) => {
 
     const btn = form.querySelector('.submit-btn');
     const originalText = btn.textContent;
+    const originalBackground = btn.style.background;
+    const originalColor = btn.style.color;
 
     btn.textContent = 'ENVIANDO...';
     btn.disabled = true;
@@ -232,18 +234,22 @@ form.addEventListener('submit', async (e) => {
 
         if (response.ok) {
             btn.textContent = 'MISSÃO ENVIADA ✓';
-            btn.style.background = 'var(--accent-green)';
+            btn.style.background = 'var(--green)'; // Verde para sucesso
+            btn.style.color = '#000'; 
             form.reset();
         } else {
-            throw new Error('Erro no envio');
+            throw new Error('Erro');
         }
     } catch (error) {
         btn.textContent = 'ERRO, TENTE NOVAMENTE';
+        btn.style.background = '#ff4d4d'; // Vermelho para erro
+        btn.style.color = '#fff';
     } finally {
         setTimeout(() => {
             btn.textContent = originalText;
             btn.disabled = false;
-            btn.style.background = '';
+            btn.style.background = originalBackground;
+            btn.style.color = originalColor;
         }, 3000);
     }
 });
