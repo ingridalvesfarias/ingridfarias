@@ -647,36 +647,36 @@
                 </div>
             </div>
             <div class="contact-form-wrapper">
-                <form class="mission-form" id="missionForm">
+                <form action="https://formspree.io/f/mpqeoenp" method="POST" class="mission-form" id="missionForm">
                     <div class="form-row">
                         <div class="input-group">
                             <label>NOME COMPLETO</label>
-                            <input type="text" placeholder="Seu nome completo" required>
+                            <input type="text" name="nome" placeholder="Seu nome completo" required>
                         </div>
                         <div class="input-group">
                             <label>E-MAIL</label>
-                            <input type="email" placeholder="seu@email.com" required>
+                            <input type="email" name="email" placeholder="seu@email.com" required>
                         </div>
                     </div>
                     <div class="input-group">
                         <label>WHATSAPP</label>
-                        <input type="tel" placeholder="+55 (XX) XXXXX-XXXX">
+                        <input type="tel" name="whatsapp" placeholder="+55 (XX) XXXXX-XXXX">
                     </div>
                     <div class="input-group">
                         <label>SERVIÇO DESEJADO</label>
-                        <select>
-                            <option>Landing Page Express — V1 (R$ 350)</option>
-                            <option>Landing Page Premium — V2 (R$ 550)</option>
-                            <option>Site Institucional — V3 (R$ 1.400)</option>
-                            <option>Site Premium — V4 (R$ 2.200)</option>
-                            <option>E-commerce — V5 (R$ 2.800)</option>
-                            <option>Combo Site + IA — V6 (R$ 1.750 + R$ 250/mês)</option>
-                            <option>Outros Protocolos</option>
+                        <select name="servico">
+                            <option value="Landing Page Express">Landing Page Express — V1 (R$ 350)</option>
+                            <option value="Landing Page Premium">Landing Page Premium — V2 (R$ 550)</option>
+                            <option value="Site Institucional">Site Institucional — V3 (R$ 1.400)</option>
+                            <option value="Site Premium">Site Premium — V4 (R$ 2.200)</option>
+                            <option value="E-commerce">E-commerce — V5 (R$ 2.800)</option>
+                            <option value="Combo Site + IA">Combo Site + IA — V6 (R$ 1.750 + R$ 250/mês)</option>
+                            <option value="Outros Protocolos">Outros Protocolos</option>
                         </select>
                     </div>
                     <div class="input-group">
                         <label>MENSAGEM (OPCIONAL)</label>
-                        <textarea rows="4" placeholder="Descreva brevemente o projeto..."></textarea>
+                        <textarea name="mensagem" rows="4" placeholder="Descreva brevemente o projeto..."></textarea>
                     </div>
                     <button type="submit" class="submit-btn">ENVIAR RELATÓRIO →</button>
                 </form>
