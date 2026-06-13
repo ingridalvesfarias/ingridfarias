@@ -213,14 +213,37 @@ userInput.addEventListener('keypress', (e) => { if (e.key === 'Enter') sendMessa
 
 // ─── FORM SUBMIT ───
 const form = document.getElementById('missionForm');
-if (form) {
-    form.addEventListener('submit', function (e) {
-        // Se você quer apenas que o Formspree funcione, 
-        // a forma mais segura é deixar o formulário enviar normalmente.
-        // O Formspree cuidará da página de redirecionamento de sucesso.
 
-        const btn = form.querySelector('.submit-btn');
-        btn.textContent = 'ENVIANDO...';
-        btn.disabled = true;
-    });
-}
+form.addEventListener('submit', async (e) => {
+    e.preventDefault();
+
+    const btn = form.querySelector('.submit-btn');
+    const originalText = btn.textContent;
+
+    btn.textContent = 'ENVIANDO...';
+    btn.disabled = true;
+
+    try {
+        const response = await fetch(form.action, {
+            method: 'POST',
+            body: new FormData(form),
+            headers: { 'Accept': 'application/json' }
+        });
+
+        if (response.ok) {
+            btn.textContent = 'MISSÃO ENVIADA ✓';
+            btn.style.background = 'var(--accent-green)';
+            form.reset();
+        } else {
+            throw new Error('Erro no envio');
+        }
+    } catch (error) {
+        btn.textContent = 'ERRO, TENTE NOVAMENTE';
+    } finally {
+        setTimeout(() => {
+            btn.textContent = originalText;
+            btn.disabled = false;
+            btn.style.background = '';
+        }, 3000);
+    }
+});
