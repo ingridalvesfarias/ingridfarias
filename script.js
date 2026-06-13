@@ -214,18 +214,13 @@ userInput.addEventListener('keypress', (e) => { if (e.key === 'Enter') sendMessa
 // ─── FORM SUBMIT ───
 const form = document.getElementById('missionForm');
 if (form) {
-    form.addEventListener('submit', (e) => {
-        e.preventDefault();
+    form.addEventListener('submit', function (e) {
+        // Se você quer apenas que o Formspree funcione, 
+        // a forma mais segura é deixar o formulário enviar normalmente.
+        // O Formspree cuidará da página de redirecionamento de sucesso.
+
         const btn = form.querySelector('.submit-btn');
-        const original = btn.textContent;
-        btn.textContent = 'MISSÃO ENVIADA ✓';
-        btn.style.background = 'var(--green)';
-        btn.style.color = '#000';
-        setTimeout(() => {
-            btn.textContent = original;
-            btn.style.background = '';
-            btn.style.color = '';
-            form.reset();
-        }, 3000);
+        btn.textContent = 'ENVIANDO...';
+        btn.disabled = true;
     });
 }
