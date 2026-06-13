@@ -235,7 +235,7 @@ form.addEventListener('submit', async (e) => {
         if (response.ok) {
             btn.textContent = 'MISSÃO ENVIADA ✓';
             btn.style.background = 'var(--green)'; // Verde para sucesso
-            btn.style.color = '#000'; 
+            btn.style.color = '#000';
             form.reset();
         } else {
             throw new Error('Erro');
